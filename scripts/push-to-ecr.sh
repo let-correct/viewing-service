@@ -8,7 +8,7 @@ set -euo pipefail
 
 IMAGE_TAG=${1:?Usage: push-to-ecr.sh <image-tag> <cmd>}
 CMD=${2:?Usage: push-to-ecr.sh <image-tag> <cmd>}
-REPO_NAME="${CMD//-/_}_ecr"
+REPO_NAME="${CMD//-/_}_worker_ecr"
 REGION="eu-west-2"
 
 ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
